@@ -92,9 +92,9 @@ class ViewController: UIViewController {
     func processOperation(operation: Operation){
         playSound()
         if currentOperation != Operation.Empty {
-            if runningNumber != " "{
+            if runningNumber != ""{
                 rightValStr = runningNumber
-                runningNumber = " "
+                runningNumber = ""
                 
                 if currentOperation == Operation.Multiply {
                     result = "\(Double(leftValStr)! * Double(rightValStr)!)"
@@ -119,6 +119,16 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func clearBtnPressed(_ sender: Any) {
+        
+        playSound()
+        leftValStr = ""
+        rightValStr = ""
+        currentOperation = .Empty
+        runningNumber = ""
+        outputLbl.text = "0"
+        
+    }
     
 
 }
